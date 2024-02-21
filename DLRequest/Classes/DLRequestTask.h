@@ -16,16 +16,16 @@ typedef void(^DLRequestFailBlock)(NSURLSessionDataTask *task, NSError *error);
 @interface DLRequestTask : NSObject
 
 //**********************************************  GET  请求  **********************************************//
-+ (NSURLSessionDataTask *)getConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath parameters:(NSDictionary * __nullable)parameters;
++ (void)getConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params;
 
 //**********************************************  POST  请求  **********************************************//
-+ (NSURLSessionDataTask *)postConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath parameters:(NSDictionary * __nullable)parameters;
++ (void)postConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params;
 
 //**********************************************  PUT  请求  **********************************************//
-+ (NSURLSessionDataTask *)putConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath parameters:(NSDictionary *)parameters;
++ (void)putConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params;
 
 //**********************************************  DELETE  请求  **********************************************//
-+ (NSURLSessionDataTask *)deleteConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath parameters:(NSDictionary * __nullable)parameters;
++ (void)deleteConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params;
 
 @end
 

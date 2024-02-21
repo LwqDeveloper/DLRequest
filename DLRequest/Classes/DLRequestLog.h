@@ -43,8 +43,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setTask:(NSURLSessionTask *)task obj:(id)obj;
 - (void)setTask:(NSURLSessionTask *)task err:(NSError *)err;
-/// 计算耗时
-- (void)setupExpendTime;
 
 @end
 

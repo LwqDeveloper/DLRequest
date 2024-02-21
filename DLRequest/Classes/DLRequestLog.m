@@ -67,14 +67,12 @@
 - (void)setTask:(NSURLSessionTask *)task obj:(id)obj {
     self.task = task;
     self.responseObject = obj;
+    self.expendTime = [[NSDate date] timeIntervalSinceDate:self.recordDate];
 }
 
 - (void)setTask:(NSURLSessionTask *)task err:(NSError *)err {
     self.task = task;
     self.error = err;
-}
-
-- (void)setupExpendTime {
     self.expendTime = [[NSDate date] timeIntervalSinceDate:self.recordDate];
 }
 
