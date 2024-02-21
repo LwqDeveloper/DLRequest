@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "DLRequest.h"
 #import "DLRequestLog.h"
 #import "DLRequestManager.h"
 #import "DLRequestTask.h"
