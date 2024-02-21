@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// task
 @property (nonatomic, strong) NSURLSessionTask *task;
+/// path
+@property (nonatomic, strong) NSString *path;
 /// 参数
 @property (nonatomic, strong) NSDictionary *params;
 /// res
@@ -41,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求方式
 @property (nonatomic, strong) NSString *method;
 
-+ (instancetype)modelWithMethod:(NSString *)method;
++ (instancetype)modelWithMethod:(NSString *)method path:(NSString *)path;
 
 - (void)setTask:(NSURLSessionTask *)task params:(NSDictionary * __nullable)params obj:(id)obj;
 - (void)setTask:(NSURLSessionTask *)task params:(NSDictionary * __nullable)params err:(NSError *)err;

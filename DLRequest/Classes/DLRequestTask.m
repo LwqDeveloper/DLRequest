@@ -13,7 +13,7 @@
 
 //**********************************************  GET  请求  **********************************************//
 + (void)getConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params {
-    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"GET"];
+    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"GET" path:urlPath];
     [[DLRequestManager shared].sessionManager GET:urlPath parameters:params headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -28,7 +28,7 @@
 
 //**********************************************  POST  请求  **********************************************//
 + (void)postConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params {
-    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"POST"];
+    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"POST" path:urlPath];
     [[DLRequestManager shared].sessionManager POST:urlPath parameters:params headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -43,7 +43,7 @@
 
 //**********************************************  PUT  请求  **********************************************//
 + (void)putConnection:(DLRequestSuccBlock)success fail:(nonnull DLRequestFailBlock)fail urlPath:(nonnull NSString *)urlPath params:(NSDictionary * _Nullable)params {
-    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"PUT"];
+    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"PUT" path:urlPath];
     [[DLRequestManager shared].sessionManager PUT:urlPath parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) success(task, responseObject);
         [logModel setTask:task params:params obj:responseObject];
@@ -56,7 +56,7 @@
 
 //**********************************************  DELETE  请求  **********************************************//
 + (void)deleteConnection:(DLRequestSuccBlock)success fail:(DLRequestFailBlock)fail urlPath:(NSString *)urlPath params:(NSDictionary * __nullable)params {
-    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"DELETE"];
+    DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"DELETE" path:urlPath];
     [[DLRequestManager shared].sessionManager DELETE:urlPath parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) success(task, responseObject);
         [logModel setTask:task params:params obj:responseObject];

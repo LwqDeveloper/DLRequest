@@ -51,9 +51,10 @@
 
 @implementation DLRequestLogModel
 
-+ (instancetype)modelWithMethod:(NSString *)method {
++ (instancetype)modelWithMethod:(NSString *)method path:(nonnull NSString *)path {
     DLRequestLogModel *model = [DLRequestLogModel new];
     model.method = method;
+    model.path = path;
     return model;
 }
 
