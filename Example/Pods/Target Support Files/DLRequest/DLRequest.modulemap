@@ -1,0 +1,6 @@
+framework module DLRequest {
+  umbrella header "DLRequest-umbrella.h"
+
+  export *
+  module * { export * }
+}

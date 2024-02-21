@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'DLRequest_Example' do
+  pod 'DLRequest', :path => '../'
+
+  target 'DLRequest_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
