@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// err
 @property (nonatomic, strong) NSError *error;
 /// 记录时间
-@property (nonatomic, strong) NSData *recordDate;
+@property (nonatomic, strong) NSDate *recordDate;
 /// 耗时
 @property (nonatomic, assign) float expendTime;
 /// 请求方式

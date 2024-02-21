@@ -32,7 +32,8 @@
     self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
     
     self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    
+    [self.sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+
     self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/plain", @"text/javascript", @"text/json", @"application/gzip", nil];
 }
