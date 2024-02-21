@@ -18,10 +18,10 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) success(task, responseObject);
-        [logModel setTask:task obj:responseObject];
+        [logModel setTask:task params:params obj:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (fail) fail(task, error);
-        [logModel setTask:task err:error];
+        [logModel setTask:task params:params err:error];
     }];
     [[DLRequestLog shared] recordLogModel:logModel];
 }
@@ -33,10 +33,10 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) success(task, responseObject);
-        [logModel setTask:task obj:responseObject];
+        [logModel setTask:task params:params obj:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (fail) fail(task, error);
-        [logModel setTask:task err:error];
+        [logModel setTask:task params:params err:error];
     }];
     [[DLRequestLog shared] recordLogModel:logModel];
 }
@@ -46,10 +46,10 @@
     DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"PUT"];
     [[DLRequestManager shared].sessionManager PUT:urlPath parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) success(task, responseObject);
-        [logModel setTask:task obj:responseObject];
+        [logModel setTask:task params:params obj:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (fail) fail(task, error);
-        [logModel setTask:task err:error];
+        [logModel setTask:task params:params err:error];
     }];
     [[DLRequestLog shared] recordLogModel:logModel];
 }
@@ -59,10 +59,10 @@
     DLRequestLogModel *logModel = [DLRequestLogModel modelWithMethod:@"DELETE"];
     [[DLRequestManager shared].sessionManager DELETE:urlPath parameters:params headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) success(task, responseObject);
-        [logModel setTask:task obj:responseObject];
+        [logModel setTask:task params:params obj:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (fail) fail(task, error);
-        [logModel setTask:task err:error];
+        [logModel setTask:task params:params err:error];
     }];
     [[DLRequestLog shared] recordLogModel:logModel];
 }

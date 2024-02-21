@@ -64,15 +64,17 @@
     return self;
 }
 
-- (void)setTask:(NSURLSessionTask *)task obj:(id)obj {
+- (void)setTask:(NSURLSessionTask *)task params:(NSDictionary * _Nullable)params obj:(nonnull id)obj {
     self.task = task;
     self.responseObject = obj;
+    self.params = params;
     self.expendTime = [[NSDate date] timeIntervalSinceDate:self.recordDate];
 }
 
-- (void)setTask:(NSURLSessionTask *)task err:(NSError *)err {
+- (void)setTask:(NSURLSessionTask *)task params:(NSDictionary * _Nullable)params err:(nonnull NSError *)err {
     self.task = task;
     self.error = err;
+    self.params = params;
     self.expendTime = [[NSDate date] timeIntervalSinceDate:self.recordDate];
 }
 
